@@ -1,0 +1,14 @@
+= turbo_frame_tag "table" do
+  %table#tasks.table.table-striped
+    %thead
+      %tr
+        %th Todo
+        %th In progress
+        %th Review
+        %th Done
+        %th Cancelled
+    %tbody
+      %tr
+        - [:todo, :in_progress, :review, :done, :cancelled].each do |status|
+          %td
+            = render "tasks/task", status: status

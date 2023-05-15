@@ -1,0 +1,8 @@
+
+- if current_user
+  .bg-light.py-3
+    .container
+      .row
+        .col-md-6
+          %p.mb-0 Today's activity:
+          %h5.mb-0= "#{current_user.tasks.updated_today.count} tickets updated"

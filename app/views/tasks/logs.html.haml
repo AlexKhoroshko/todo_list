@@ -1,0 +1,18 @@
+= render "remote_modal", title: "Logs" do
+  %h6= @task.title
+
+  %table#logs.table.table-striped
+    %thead
+      %tr
+        %th Event
+        %th Changes
+        %th Changed at
+    %tbody
+    - @task.versions.reverse_order.each do |version|
+      %tr
+        %td=version.event.humanize
+        %td
+          - version.changeset.each do |key, value|
+            - next if key == "updated_at"
+            %p= "#{key.humanize}: #{value[0]} -> #{value[1]}"
+        %td= version.created_at.in_time_zone(Time.zone).strftime("%b %d, %Y %I:%M %p")

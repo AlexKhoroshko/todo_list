@@ -1,0 +1,11 @@
+= form_with(url: tasks_path,
+  class: "filters-container",
+  method: :get,
+  data: { controller: "filters", filters_target: "form", turbo_frame: "table" }) do |f|
+
+  .filters-group
+    = f.label :priority, "Filter by priority"
+    = f.select :priority,
+      options_for_select(Task.priorities.keys, params[:priority]),
+      { include_blank: true },
+      { data: { action: "filters#submit" } }

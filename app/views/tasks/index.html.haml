@@ -1,0 +1,7 @@
+.tasks-header
+  %h3 Tasks
+  = render "filters"
+  %div= link_to "+", new_task_path, class: "btn btn-primary",
+    data: { turbo_frame: "remote_modal" }
+
+= render "table"

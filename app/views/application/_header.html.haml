@@ -1,0 +1,10 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %div.container-fluid
+    %button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+      %span.navbar-toggler-icon
+    %a.navbar-brand(href="#") TodoList
+    %div.collapse.navbar-collapse#navbarNav
+      %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+        - if user_signed_in?
+          %li.nav-item
+            = button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-link"

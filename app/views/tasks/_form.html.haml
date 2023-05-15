@@ -1,0 +1,20 @@
+= form_with model: task do |f|
+  .mb-3
+    = f.label :title, class: "form-label"
+    = f.text_field :title, class: "form-control"
+    = field_errors task, :title
+  .mb-3
+    = f.label :description, class: "form-label"
+    = f.text_area :description, class: "form-control"
+    = field_errors task, :description
+  .md-3
+    = f.label :priority, class: "form-label"
+    = f.select :priority, Task.priorities.keys.map { |k| [k.humanize, k] }, {}, class: 'form-control'
+    = field_errors task, :priority
+  .md-3
+    = f.label :status, class: "form-label"
+    = f.select :status, Task.statuses.keys.map { |k| [k.humanize, k] }, {}, class: 'form-control'
+    = field_errors task, :status
+  .mb-3
+    = f.button class: "btn btn-primary"
+    = link_to "Cancel", tasks_path, class: "btn btn-outline-secondary"
