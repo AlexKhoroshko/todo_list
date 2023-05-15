@@ -1,6 +1,6 @@
 # TODO LIST
 
-This is a Rails application for managing a todo list
+This is a Rails application for managing a todo list using
 
 ## Getting Started
 
@@ -16,18 +16,18 @@ Make sure you have Docker and Docker Compose installed on your system.
 2. Build the Docker image:
 
 ```bash
-    docker-compose build
+docker-compose build
 ```
 3. Create the database:
 
 ```bash
-    docker-compose run web rails db:create
+docker-compose run web rails db:create
 ```
 
 4. Run the database migrations:
 
 ```bash
-    docker-compose run web rails db:migrate
+docker-compose run web rails db:migrate
 ```
 
 5. Start the application:
