@@ -1,6 +1,6 @@
 # TODO LIST
 
-This is a Rails application for managing a todo list using
+This is a Rails application for managing a todo list
 
 ## Getting Started
 
